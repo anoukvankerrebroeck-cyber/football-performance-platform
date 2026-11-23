@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Football Performance Platform</title>
+<style>
+:root{--wine:#76263d;--wine2:#923d55;--pale:#f7edf0;--bg:#f5f6f8;--panel:#fff;--text:#24242a;--muted:#777985;--line:#e8e8ed;--green:#23845d;--amber:#b87920;--red:#b84451;--shadow:0 8px 24px rgba(35,25,30,.055)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.45 Inter,Segoe UI,Arial,sans-serif}button,input,select{font:inherit}button{cursor:pointer}.app{display:flex;min-height:100vh}.sidebar{width:248px;background:#fff;border-right:1px solid var(--line);padding:24px 16px;display:flex;flex-direction:column;flex-shrink:0}.brand{display:flex;gap:11px;align-items:center;padding:0 10px 27px}.logo{width:38px;height:38px;border-radius:12px;background:var(--wine);color:white;display:grid;place-items:center;font-weight:800;font-size:18px}.brand strong{display:block;font-size:15px;letter-spacing:-.3px}.brand small{color:var(--muted);font-size:11px}.nav-label{font-size:10px;font-weight:800;color:#a0a0a8;letter-spacing:1.2px;padding:15px 12px 7px}.nav button{width:100%;border:0;background:transparent;text-align:left;padding:10px 12px;border-radius:9px;color:#5f6069;display:flex;gap:12px;align-items:center;margin:2px 0;font-size:13px}.nav button:hover{background:#faf5f6}.nav button.active{background:var(--pale);color:var(--wine);font-weight:700}.ico{width:18px;text-align:center;font-size:16px}.side-bottom{margin-top:auto;padding:14px 10px 0;border-top:1px solid var(--line);color:var(--muted);font-size:11px}.main{flex:1;min-width:0}.topbar{height:68px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 32px;position:sticky;top:0;z-index:5}.crumb{font-weight:650}.top-right{display:flex;align-items:center;gap:14px}.season{border:1px solid var(--line);border-radius:8px;padding:8px 10px;color:#555;background:white}.avatar{width:34px;height:34px;border-radius:50%;background:var(--pale);color:var(--wine);display:grid;place-items:center;font-weight:800}.content{padding:30px 34px;max-width:1500px;margin:auto}.page-head{display:flex;justify-content:space-between;align-items:flex-start;gap:15px;margin-bottom:24px}.eyebrow{color:var(--wine);font-size:11px;font-weight:800;letter-spacing:1.1px;text-transform:uppercase}.page-head h1{font-size:26px;letter-spacing:-.7px;margin:5px 0}.sub{color:var(--muted);margin:0}.btn{border:1px solid var(--line);background:#fff;color:#444;padding:9px 13px;border-radius:8px;font-weight:650}.btn.primary{background:var(--wine);border-color:var(--wine);color:#fff}.btn.primary:hover{background:var(--wine2)}.btn.small{padding:6px 10px;font-size:12px}.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;margin-bottom:20px}.card,.panel{background:var(--panel);border:1px solid var(--line);border-radius:13px;box-shadow:var(--shadow)}.stat{padding:18px}.stat-top{display:flex;justify-content:space-between;color:var(--muted);font-size:12px}.stat-value{font-size:27px;font-weight:750;margin:9px 0 2px;letter-spacing:-.6px}.positive{color:var(--green);font-size:11px}.muted{color:var(--muted)}.grid2{display:grid;grid-template-columns:1.35fr 1fr;gap:17px}.panel{padding:19px;margin-bottom:17px}.panel-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:15px}.panel h3{font-size:14px;margin:0}.panel p{color:var(--muted);margin:5px 0 0;font-size:12px}.chart{height:190px;display:flex;align-items:end;gap:12px;padding:12px 8px 2px;border-bottom:1px solid var(--line);background:repeating-linear-gradient(to bottom,transparent 0,transparent 46px,#f0f0f2 47px)}.bar-wrap{flex:1;height:100%;display:flex;flex-direction:column;justify-content:end;align-items:center;gap:7px}.bar{width:min(32px,70%);background:#b87588;border-radius:6px 6px 2px 2px}.bar.dark{background:var(--wine)}.bar-wrap small{color:var(--muted);font-size:10px}.activity{display:flex;gap:12px;align-items:center;padding:11px 0;border-bottom:1px solid #f0f0f2}.activity:last-child{border:0}.dot{width:9px;height:9px;border-radius:50%;background:var(--wine)}.activity strong{font-size:12px;display:block}.activity small{color:var(--muted)}.table-wrap{overflow:auto}.toolbar{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-bottom:15px}.search{border:1px solid var(--line);background:#fff;border-radius:8px;padding:9px 11px;min-width:220px;outline-color:var(--wine)}select,input{border:1px solid var(--line);background:white;border-radius:8px;padding:9px 10px;color:#444;outline-color:var(--wine)}table{width:100%;border-collapse:collapse;white-space:nowrap}th{text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:.7px;color:#8a8b93;padding:11px 12px;border-bottom:1px solid var(--line)}td{padding:13px 12px;border-bottom:1px solid #f0f0f2;font-size:12px}tr:last-child td{border-bottom:0}.player{display:flex;align-items:center;gap:10px}.player-avatar{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:#f1e3e8;color:var(--wine);font-weight:750}.player strong{display:block}.player small{color:var(--muted)}.pill{display:inline-block;border-radius:30px;padding:4px 8px;font-size:10px;font-weight:700;background:#edf6f1;color:var(--green)}.pill.warn{background:#fff4e4;color:var(--amber)}.pill.red{background:#fae9eb;color:var(--red)}.empty{padding:34px;text-align:center;color:var(--muted)}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.field label{display:block;font-size:11px;font-weight:700;color:#666;margin-bottom:5px}.field input,.field select{width:100%}.field.full{grid-column:1/-1}.notice{background:#fbf5f6;border:1px solid #f0dfe4;color:#704052;padding:12px 14px;border-radius:9px;font-size:12px;margin-bottom:18px}.profile-head{display:flex;align-items:center;gap:14px;padding:8px 0 20px}.profile-head .player-avatar{width:54px;height:54px;font-size:18px}.tabs{display:flex;gap:6px;border-bottom:1px solid var(--line);margin-bottom:16px}.tabs button{border:0;background:none;padding:10px 12px;color:var(--muted)}.tabs button.active{color:var(--wine);border-bottom:2px solid var(--wine);font-weight:700}.mobile-menu{display:none}.footer-note{font-size:11px;color:var(--muted);margin-top:22px}
+@media(max-width:900px){.sidebar{width:205px}.content{padding:24px 20px}.cards{grid-template-columns:repeat(2,1fr)}.grid2{grid-template-columns:1fr}}
+@media(max-width:650px){.sidebar{display:none}.topbar{padding:0 16px}.content{padding:20px 14px}.cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.stat{padding:13px}.stat-value{font-size:22px}.page-head{flex-direction:column}.top-right .season{display:none}.mobile-menu{display:block}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}}
+
+.dashboard-toolbar{display:flex;gap:12px;align-items:end;flex-wrap:wrap;margin-bottom:18px}
+.dashboard-toolbar .field{min-width:180px}
+.week-nav{display:flex;align-items:center;gap:8px}
+.week-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:9px}
+.day-card{border:1px solid var(--line);border-radius:11px;padding:12px;background:#fff;min-width:0;display:flex;flex-direction:column;gap:9px}
+.day-card.today{border-color:var(--wine);box-shadow:0 0 0 1px var(--wine) inset}
+.day-top{display:flex;justify-content:space-between;align-items:center;gap:5px}
+.day-name{font-size:11px;font-weight:800;color:#555}
+.day-date{font-size:10px;color:var(--muted)}
+.md-tag{font-size:9px;font-weight:800;padding:4px 6px;border-radius:20px;background:var(--pale);color:var(--wine);white-space:nowrap}
+.md-tag.match{background:#eaf5ef;color:var(--green)}
+.md-tag.rest{background:#f0f0f2;color:#777}
+.day-theme{font-size:11px;color:#42424a;line-height:1.4;min-height:46px}
+.day-edit{border:1px solid var(--line);background:#fafafa;border-radius:7px;padding:6px 7px;font-size:10px;color:#666}
+.match-card{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.match-date{font-size:24px;font-weight:800;color:var(--wine)}
+.monitor-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+@media(max-width:1050px){.week-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:650px){.week-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.monitor-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+ <div class="brand"><div class="logo">FP</div><div><strong>Football Performance</strong><small>PHYSICAL COACH PLATFORM</small></div></div>
+ <nav class="nav" id="nav">
+  <div class="nav-label">OVERZICHT</div>
+  <button class="active" data-page="dashboard"><span class="ico">▦</span>Dashboard</button>
+  <div class="nav-label">ATLETEN</div>
+  <button data-page="teams"><span class="ico">♧</span>Teams & spelers</button>
+  <button data-page="testing"><span class="ico">◉</span>Fysieke testing</button>
+  <button data-page="gps"><span class="ico">⌁</span>GPS monitoring</button>
+  <button data-page="wellness"><span class="ico">♡</span>Wellness & recovery</button>
+  <button data-page="strength"><span class="ico">✣</span>Kracht & gym</button>
+  <button data-page="injuries"><span class="ico">✚</span>Blessures & beschikbaarheid</button>
+  <div class="nav-label">PLANNING</div>
+  <button data-page="load"><span class="ico">▤</span>Trainingsbelasting</button>
+  <button data-page="cycle"><span class="ico">◌</span>Menstruatiecyclus</button>
+  <button data-page="history"><span class="ico">◷</span>Seizoenen & historiek</button>
+  <div class="nav-label">BEHEER</div>
+  <button data-page="settings"><span class="ico">⚙</span>Instellingen</button>
+ </nav>
+ <div class="side-bottom">Demo-omgeving · versie 1.0<br>Football Performance Platform</div>
+</aside>
+<main class="main">
+ <header class="topbar"><div class="crumb" id="crumb">Dashboard</div><div class="top-right"><button class="btn small" type="button" onclick="window.location.reload()" title="Pagina opnieuw laden">↻ Vernieuwen</button><select class="season" aria-label="Seizoen"><option>Seizoen 2026–2027</option><option>Seizoen 2025–2026</option></select><span class="muted">Physical coach</span><div class="avatar">PC</div></div></header>
+ <div class="content" id="content"></div>
+</main>
+</div>
+<script>
+const players=[
+ {name:"Emma Vermeulen",nr:1,team:"U21",pos:"Doelvrouw",status:"Beschikbaar",well:8.2,gps:9.8,load:740},
+ {name:"Louise De Smet",nr:4,team:"U21",pos:"Verdedigster",status:"Beschikbaar",well:7.6,gps:10.4,load:815},
+ {name:"Noor Maes",nr:7,team:"U18",pos:"Middenveldster",status:"Aangepast",well:5.8,gps:8.9,load:620},
+ {name:"Julie Claeys",nr:9,team:"U18",pos:"Aanvalster",status:"Beschikbaar",well:8.7,gps:11.2,load:890},
+ {name:"Lotte Willems",nr:11,team:"U16",pos:"Middenveldster",status:"Revalidatie",well:4.9,gps:6.1,load:430},
+ {name:"Ella Martens",nr:14,team:"U16",pos:"Verdedigster",status:"Beschikbaar",well:7.9,gps:9.4,load:710},
+ {name:"Marie Peeters",nr:17,team:"U21",pos:"Aanvalster",status:"Beschikbaar",well:8.4,gps:10.8,load:860},
+ {name:"Fien Jacobs",nr:20,team:"U18",pos:"Doelvrouw",status:"Beschikbaar",well:7.2,gps:7.1,load:510}
+];
+const pages={dashboard:"Dashboard",teams:"Teams & spelers",testing:"Fysieke testing",gps:"GPS monitoring",wellness:"Wellness & recovery",strength:"Kracht & gym",injuries:"Blessures & beschikbaarheid",load:"Trainingsbelasting",cycle:"Menstruatiecyclus",history:"Seizoenen & historiek",settings:"Instellingen"};
+let current="dashboard", filter="Alle teams", query="";
+let dashboardTeam="U18";
+let weekOffset=0;
+let matchDate=new Date();
+matchDate.setDate(matchDate.getDate()+((6-matchDate.getDay()+7)%7));
+let dayThemes={
+  1:"Recovery & individuele aandacht",
+  2:"Lower body · kracht & loading games",
+  3:"Rust / individueel programma",
+  4:"Upper body · snelheid & tactische integratie",
+  5:"Pre-match · activatie & standaardsituaties",
+  6:"Wedstrijd",
+  0:"Recovery / compensatietraining"
+};
+let matchOpponent="Tegenstander";
+let matchVenue="Thuis";
+let matchKickoff="14:30";
+const $=s=>document.querySelector(s);
+function head(kicker,title,sub,action=""){return `<div class="page-head"><div><div class="eyebrow">${kicker}</div><h1>${title}</h1><p class="sub">${sub}</p></div>${action}</div>`}
+function stat(label,value,foot,icon){return `<div class="card stat"><div class="stat-top"><span>${label}</span><span>${icon}</span></div><div class="stat-value">${value}</div><div class="positive">${foot}</div></div>`}
+function chart(title,sub,vals,labels){return `<section class="panel"><div class="panel-head"><div><h3>${title}</h3><p>${sub}</p></div><span class="muted">Laatste 7 dagen</span></div><div class="chart">${vals.map((v,i)=>`<div class="bar-wrap"><div class="bar ${i===vals.length-1?'dark':''}" style="height:${v}%"></div><small>${labels[i]}</small></div>`).join("")}</div></section>`}
+function rows(list){return list.map(p=>`<tr><td><div class="player"><div class="player-avatar">${p.nr}</div><div><strong>${p.name}</strong><small>${p.pos}</small></div></div></td><td>${p.team}</td><td>${p.well.toFixed(1)} / 10</td><td>${p.gps.toFixed(1)} km</td><td>${p.load} AU</td><td><span class="pill ${p.status==="Aangepast"?"warn":p.status==="Revalidatie"?"red":""}">${p.status}</span></td><td><button class="btn small" onclick="profile('${p.name}')">Profiel</button></td></tr>`).join("")}
+function table(list){return `<div class="table-wrap"><table><thead><tr><th>Speelster</th><th>Team</th><th>Wellness</th><th>Afstand</th><th>Belasting</th><th>Status</th><th></th></tr></thead><tbody>${rows(list)}</tbody></table></div>`}
+function dateKey(d){return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")}
+function mondayOf(d){let x=new Date(d);x.setHours(12,0,0,0);x.setDate(x.getDate()-((x.getDay()+6)%7));return x}
+function fmt(d){return d.toLocaleDateString("nl-BE",{day:"2-digit",month:"2-digit"})}
+function dayCode(d){
+  const diff=Math.round((new Date(d.getFullYear(),d.getMonth(),d.getDate())-new Date(matchDate.getFullYear(),matchDate.getMonth(),matchDate.getDate()))/86400000);
+  if(diff===0)return "MATCHDAY";
+  if(diff<0)return "M"+diff;
+  return "M+"+diff;
+}
+function dashboard(){
+  const base=mondayOf(new Date());base.setDate(base.getDate()+weekOffset*7);
+  const end=new Date(base);end.setDate(end.getDate()+6);
+  const teamPlayers=players.filter(p=>p.team===dashboardTeam);
+  const available=teamPlayers.filter(p=>p.status==="Beschikbaar").length;
+  const wellness=teamPlayers.length?teamPlayers.reduce((s,p)=>s+p.well,0)/teamPlayers.length:0;
+  const matchLabel=matchDate.toLocaleDateString("nl-BE",{weekday:"long",day:"numeric",month:"long"});
+  let weekCards=Array.from({length:7},(_,i)=>{
+    const d=new Date(base);d.setDate(base.getDate()+i);
+    const key=dateKey(d), code=dayCode(d), theme=dayThemes[d.getDay()]||"Nog geen thema ingepland";
+    const isMatch=code==="MATCHDAY", isRest=/rust/i.test(theme);
+    return `<article class="day-card ${dateKey(new Date())===key?'today':''}">
+      <div class="day-top"><div><div class="day-name">${d.toLocaleDateString("nl-BE",{weekday:"short"}).toUpperCase()}</div><div class="day-date">${fmt(d)}</div></div>
+      <span class="md-tag ${isMatch?'match':isRest?'rest':''}">${code}</span></div>
+      <div class="day-theme">${theme}</div>
+      <button class="day-edit" onclick="editDayTheme(${d.getDay()},'${key}')">✎ Thema aanpassen</button>
+    </article>`;
+  }).join("");
+  return `${head("Performance overview","Dashboard",`Weekplanning en fysieke opvolging voor ${dashboardTeam}.`,'<button class="btn primary" onclick="openModal(\\'quick\\')">＋ Data toevoegen</button>')}
+  <section class="panel">
+    <div class="dashboard-toolbar">
+      <div class="field"><label>Geselecteerd team</label><select id="dashboardTeam" onchange="dashboardTeam=this.value;render()"><option ${dashboardTeam==="U16"?"selected":""}>U16</option><option ${dashboardTeam==="U18"?"selected":""}>U18</option><option ${dashboardTeam==="U21"?"selected":""}>U21</option></select></div>
+      <div class="field"><label>Wedstrijddatum</label><input type="date" value="${dateKey(matchDate)}" onchange="matchDate=new Date(this.value+'T12:00:00');render()"></div>
+      <div class="field"><label>Week</label><div class="week-nav"><button class="btn small" onclick="weekOffset--;render()">‹</button><strong>${fmt(base)} – ${fmt(end)}</strong><button class="btn small" onclick="weekOffset++;render()">›</button><button class="btn small" onclick="weekOffset=0;render()">Deze week</button></div></div>
+    </div>
+    <div class="panel-head"><div><h3>Weekoverzicht · ${dashboardTeam}</h3><p>Dagthema en positie ten opzichte van de wedstrijddag</p></div><span class="pill">Match-based planning</span></div>
+    <div class="week-grid">${weekCards}</div>
+  </section>
+  <div class="grid2">
+    <section class="panel">
+      <div class="panel-head"><div><h3>Volgende wedstrijd</h3><p>Wedstrijdinformatie voor de geselecteerde ploeg</p></div><span class="pill">${matchVenue}</span></div>
+      <div class="match-card"><div><div class="match-date">${matchDate.toLocaleDateString("nl-BE",{day:"2-digit",month:"2-digit"})}</div><strong>${dashboardTeam} · ${matchOpponent}</strong><p>${matchLabel} · Aftrap ${matchKickoff}</p></div>
+      <button class="btn small" onclick="editMatch()">✎ Wedstrijd aanpassen</button></div>
+    </section>
+    <section class="panel">
+      <div class="panel-head"><div><h3>Aandachtspunten</h3><p>Opvolging binnen ${dashboardTeam}</p></div><span class="pill warn">${teamPlayers.filter(p=>p.status!=="Beschikbaar").length} items</span></div>
+      ${teamPlayers.filter(p=>p.status!=="Beschikbaar").length?teamPlayers.filter(p=>p.status!=="Beschikbaar").map(p=>`<div class="activity"><span class="dot" style="background:${p.status==="Revalidatie"?'#b84451':'#c28a32'}"></span><div><strong>${p.status}</strong><small>${p.name} · ${p.team}</small></div></div>`).join(""):'<div class="empty">Geen afwijkende beschikbaarheidsstatus in dit demo-team.</div>'}
+    </section>
+  </div>
+  <div class="monitor-grid">
+    ${stat("Speelsters",teamPlayers.length,"In geselecteerd team","♧")}
+    ${stat("Gem. wellness",teamPlayers.length?wellness.toFixed(1)+"/10":"—","Laatste demo-check-in","♡")}
+    ${stat("GPS monitoring",teamPlayers.filter(p=>p.gps>0).length+"/"+teamPlayers.length,"Met voorbeelddata","⌁")}
+    ${stat("Beschikbaar",teamPlayers.length?Math.round(available/teamPlayers.length*100)+"%":"—",available+" speelsters beschikbaar","✚")}
+  </div>
+  <div class="notice">Dashboardgegevens zijn momenteel voorbeeldgegevens. Teamkeuze, wedstrijdplanning en dagthema's werken in deze browsersessie; er is nog geen gedeelde databank of live koppeling met Statsports/Opteamal.</div>`;
+}
+function editDayTheme(day,key){
+  const currentTheme=dayThemes[day]||"";
+  const value=prompt("Nieuw trainingsthema voor "+key+":",currentTheme);
+  if(value!==null){dayThemes[day]=value.trim()||"Nog geen thema ingepland";render()}
+}
+function editMatch(){
+  const opponent=prompt("Tegenstander:",matchOpponent);if(opponent===null)return;
+  const venue=prompt("Thuis of uit:",matchVenue);if(venue===null)return;
+  const kickoff=prompt("Aftrap (bv. 14:30):",matchKickoff);if(kickoff===null)return;
+  matchOpponent=opponent;matchVenue=venue;matchKickoff=kickoff;render();
+}
+function teams(){let list=players.filter(p=>(filter==="Alle teams"||p.team===filter)&&p.name.toLowerCase().includes(query.toLowerCase()));return `${head("Atletenbeheer","Teams & spelers","Beheer speelsters en bekijk hun individuele prestatieprofiel.",'<button class="btn primary" onclick="openModal(\\'player\\')">＋ Speelster toevoegen</button>')}<div class="panel"><div class="toolbar"><input class="search" placeholder="Zoek speelster..." value="${query}" oninput="query=this.value;render()"><select onchange="filter=this.value;render()"><option ${filter==="Alle teams"?"selected":""}>Alle teams</option>${["U16","U18","U21"].map(t=>`<option ${filter===t?"selected":""}>${t}</option>`).join("")}</select><span class="muted">${list.length} speelsters</span></div>${table(list)}</div><div class="notice">Eén speelstersprofiel kan over meerdere seizoenen en teams heen worden bijgehouden. In deze demo worden wijzigingen niet permanent opgeslagen.</div>`}
+function generic(key){const cfg={
+ testing:["FYSIEKE TESTING","Fysieke testing","Registreer testmomenten en volg evoluties op in snelheid, kracht, sprongvermogen en uithouding.","Testbatterij","CMJ · 10 m sprint · 30 m sprint · Yo-Yo IR1","Nieuw testmoment"],
+ gps:["EXTERNE BELASTING","GPS monitoring","Analyseer loopvolume, intensiteit en acceleraties op basis van GPS-sessies.","Sessies","Totale afstand · HSR · sprintafstand · acceleraties · deceleraties","GPS-data importeren"],
+ wellness:["DAGELIJKSE MONITORING","Wellness & recovery","Volg slaap, vermoeidheid, spierpijn, stress en herstel dagelijks op.","Dagelijkse check-in","Slaapkwaliteit · vermoeidheid · spierpijn · stress · motivatie","Check-in toevoegen"],
+ strength:["GYM & KRACHT","Kracht & gym","Plan en registreer individuele en teamgerichte krachttrainingen.","Trainingssessies","Lower body · upper body · core · power · preventie","Sessie toevoegen"],
+ injuries:["MEDISCHE OPVOLGING","Blessures & beschikbaarheid","Volg klachten, blessures, revalidatiestatus en trainingsbeschikbaarheid op.","Beschikbaarheid","Volledig beschikbaar · aangepast · out · return to play","Status registreren"],
+ load:["PERIODISERING","Trainingsbelasting","Combineer interne en externe belasting om trainingsweken te evalueren en bij te sturen.","Belastingsoverzicht","Session-RPE · duur · monotony · strain · acute:chronic trends","Belasting toevoegen"],
+ cycle:["INDIVIDUELE OPVOLGING","Menstruatiecyclus","Een vertrouwelijke omgeving voor vrijwillige registratie van cyclus, symptomen en ervaren impact.","Cyclusregistratie","Cyclusdag · symptomen · ervaren belasting · persoonlijke feedback","Registratie toevoegen"],
+ history:["SEIZOENEN","Seizoenen & historiek","Bekijk de ontwikkeling van speelsters doorheen teams en seizoenen.","Historiek","Seizoensarchief · teamwissels · testprogressie · loopbaanprofiel","Seizoen toevoegen"],
+ settings:["PLATFORMBEHEER","Instellingen","Beheer teams, rollen, meeteenheden en gegevensstructuur van het platform.","Configuratie","Gebruikersrollen · teams · integraties · privacy · voorkeuren","Instelling aanpassen"]
+}[key];return `${head(cfg[0],cfg[1],cfg[2],`<button class="btn primary" onclick="openModal('quick')">＋ ${cfg[5]}</button>`)}<div class="notice">Dit onderdeel is opgenomen als functioneel ontwerp. De onderstaande gegevens zijn voorbeeldinhoud en zijn niet gekoppeld aan echte spelers of systemen.</div><div class="cards">${stat("Geregistreerd","24","Voorbeeldgegevens","▦")}${stat("Deze maand","8","Registraties","◷")}${stat("Teams","3","U16 · U18 · U21","♧")}${stat("Datastatus","Demo","Geen live koppeling","⌁")}</div><div class="grid2"><section class="panel"><div class="panel-head"><div><h3>${cfg[3]}</h3><p>${cfg[4]}</p></div><span class="pill warn">Demo</span></div><div class="empty"><div style="font-size:30px;color:#b87588;margin-bottom:8px">◫</div><strong>Je gegevens verschijnen hier</strong><p>Voeg een registratie toe om deze module verder uit te bouwen.</p><button class="btn primary small" onclick="openModal('quick')">＋ ${cfg[5]}</button></div></section><section class="panel"><div class="panel-head"><div><h3>Recente activiteit</h3><p>Voorbeeld van registraties</p></div></div><div class="activity"><span class="dot"></span><div><strong>${cfg[3]} · U21</strong><small>Vandaag · Demo-registratie</small></div></div><div class="activity"><span class="dot"></span><div><strong>${cfg[3]} · U18</strong><small>Gisteren · Demo-registratie</small></div></div><div class="activity"><span class="dot"></span><div><strong>${cfg[3]} · U16</strong><small>Deze week · Demo-registratie</small></div></div></section></div>`}
+function profile(name){let p=players.find(x=>x.name===name);current="profile";$("#crumb").textContent="Spelersprofiel";$("#content").innerHTML=`${head("Atletenprofiel",p.name,`${p.team} · ${p.pos}`,'<button class="btn" onclick="go(\\'teams\\')">← Terug naar spelers</button>')}<div class="panel"><div class="profile-head"><div class="player-avatar">${p.nr}</div><div><h2 style="margin:0;font-size:20px">${p.name}</h2><div class="muted">${p.team} · ${p.pos} · <span class="pill">${p.status}</span></div></div></div><div class="cards">${stat("Wellness",p.well.toFixed(1)+"/10","Laatste check-in","♡")}${stat("Afstand",p.gps.toFixed(1)+" km","Laatste GPS-sessie","⌁")}${stat("Belasting",p.load+" AU","Laatste trainingsweek","▤")}${stat("Beschikbaarheid",p.status,"Huidige status","✚")}</div><div class="tabs"><button class="active">Overzicht</button><button onclick="alert('Historiek is onderdeel van de volgende ontwikkelfase.')">Historiek</button><button onclick="alert('Testresultaten zijn voorbeeldgegevens.')">Testresultaten</button></div><div class="notice">Dit is een fictief speelstersprofiel. In een volledige versie worden testresultaten, GPS, wellness en beschikbaarheid chronologisch aan dit profiel gekoppeld, ook bij een team- of seizoenswissel.</div></div>`}
+function go(page){current=page;query="";document.querySelectorAll(".nav button").forEach(b=>b.classList.toggle("active",b.dataset.page===page));$("#crumb").textContent=pages[page]||"Spelersprofiel";render()}
+function render(){if(current==="profile")return;$("#content").innerHTML=current==="dashboard"?dashboard():current==="teams"?teams():generic(current)}
+function openModal(type){let isPlayer=type==="player";let title=isPlayer?"Speelster toevoegen":"Nieuwe registratie";$("#modalTitle").textContent=title;$("#modalBody").innerHTML=isPlayer?`<div class="form-grid"><div class="field"><label>Voor- en achternaam</label><input id="mName" placeholder="Naam speelster"></div><div class="field"><label>Team</label><select id="mTeam"><option>U16</option><option>U18</option><option>U21</option></select></div><div class="field"><label>Positie</label><select id="mPos"><option>Verdedigster</option><option>Middenveldster</option><option>Aanvalster</option><option>Doelvrouw</option></select></div><div class="field"><label>Rugnummer</label><input id="mNr" type="number" placeholder="Nummer"></div></div>`:`<div class="form-grid"><div class="field"><label>Speelster</label><select id="mPlayer">${players.map(p=>`<option>${p.name}</option>`).join("")}</select></div><div class="field"><label>Datum</label><input id="mDate" type="date" value="${new Date().toISOString().slice(0,10)}"></div><div class="field full"><label>Notitie / waarde</label><input id="mNote" placeholder="Vul een waarde of korte notitie in"></div></div>`;$("#modal").style.display="flex";$("#saveBtn").onclick=()=>{if(isPlayer){let name=$("#mName").value.trim();if(!name){alert("Vul een naam in.");return}players.push({name,nr:Number($("#mNr").value)||players.length+1,team:$("#mTeam").value,pos:$("#mPos").value,status:"Beschikbaar",well:7,gps:0,load:0});closeModal();go("teams")}else{closeModal();alert("Registratie toegevoegd aan deze demo-sessie. De gegevens worden niet permanent bewaard.")}}}
+function closeModal(){$("#modal").style.display="none"}
+document.querySelectorAll(".nav button").forEach(b=>b.addEventListener("click",()=>go(b.dataset.page)));
+render();
+</script>
+<div id="modal" style="display:none;position:fixed;inset:0;background:#17121866;z-index:20;align-items:center;justify-content:center;padding:18px">
+ <div class="panel" style="width:min(520px,100%);padding:23px;box-shadow:0 20px 60px #0002"><div class="panel-head"><h3 id="modalTitle">Nieuwe registratie</h3><button class="btn small" onclick="closeModal()">✕</button></div><div id="modalBody"></div><div style="display:flex;justify-content:flex-end;gap:8px;margin-top:20px"><button class="btn" onclick="closeModal()">Annuleren</button><button class="btn primary" id="saveBtn">Opslaan</button></div></div>
+</div>
+</body>
+</html>
